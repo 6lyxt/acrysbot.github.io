@@ -1,5 +1,77 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $.getJSON('https://raw.githubusercontent.com/wtf6yte/acrysbot/master/json/commands.json', function(data) {
+        var all = "";
+        var colorall = "";
+        var funall = "";
+        var miscall = "";
+        var gameall = "";
+        var marketall = "";
+        var moderationall = "";
+        
+
+    for(var i = 0; i < data.length; i++){
+        var name = data[i].name.replace('<', '&lt;').replace('>', '&gt;');
+        var desc = data[i].description.replace('<', '&lt;').replace('>', '&gt;');
+        var cat = data[i].category.replace('<', '&lt;').replace('>', '&gt;');
+        var args = data[i].arguments.replace('<', '&lt;').replace('>', '&gt;');
+        console.log(data[i]);
+
+        switch(cat){
+            case "fun":
+            var text = `Name: ${name}<br>Arguments: ${args}<br>Description: ${desc}<br>Category: ${cat}<br><br><hr><br>`;
+            funall = funall + text;
+            break;
+
+            case "color":
+            var text = `Name: ${name}<br>Arguments: ${args}<br>Description: ${desc}<br>Category: ${cat}<br><br><hr><br>`;
+            colorall = colorall + text;
+            break;
+
+            case "misc":
+            var text = `Name: ${name}<br>Arguments: ${args}<br>Description: ${desc}<br>Category: ${cat}<br><br><hr><br>`;
+            miscall = miscall + text;
+            break;
+
+            case "game":
+            var text = `Name: ${name}<br>Arguments: ${args}<br>Description: ${desc}<br>Category: ${cat}<br><br><hr><br>`;
+            gameall = gameall + text;
+            break;
+
+            case "market":
+            var text = `Name: ${name}<br>Arguments: ${args}<br>Description: ${desc}<br>Category: ${cat}<br><br><hr><br>`;
+            marketall = marketall + text;
+            break;
+
+            case "moderation":
+            var text = `Name: ${name}<br>Arguments: ${args}<br>Description: ${desc}<br>Category: ${cat}<br><br><hr><br>`;
+            moderationall = moderationall + text;
+            break;
+
+        }
+        
+                    
+    }
+    $("#fun p").html(funall); 
+    $("#color p").html(colorall); 
+    $("#misc p").html(miscall); 
+    $("#game p").html(gameall);  
+    $("#market p").html(marketall); 
+    $("#moderation p").html(moderationall); 
+
+});
+
+
+function setVisible(id){
+    if(document.getElementById(id).style.display == 'none'){
+    document.getElementById(id).setAttribute("style","display:inline");
+    } else {
+        document.getElementById(id).setAttribute("style","display:none");
+    }
+}
+</script>
 
 <head>
     <meta charset="utf-8">
@@ -10,7 +82,49 @@
 <body>
     <div id="container">
         <div>
-            <p class="title">acrysbot | commands</p>
+            <h1 class="title">acrysbot | commands</h1>
+            <br>
+            <br>
+
+            <h2 onclick="setVisible('fun')"> fun </h2>
+            <br>
+            <div id="fun" style="display: none;"> 
+            <p> </p>
+            </div>
+
+            <h2 onclick="setVisible('color')"> color </h2>
+            <br>
+            <div id="color" style="display: none;"> 
+            <p> </p>
+            </div>
+
+            <h2 onclick="setVisible('misc')"> misc </h2>
+            <br>
+            <div id="misc" style="display: none;"> 
+            <p> </p>
+            </div>
+
+            <h2 onclick="setVisible('game')"> game </h2>
+            <br>
+            <div id="game" style="display: none;"> 
+            <p> </p>
+            </div>
+
+            <h2 onclick="setVisible('market')"> market </h2>
+            <br>
+            <div id="market" style="display: none;"> 
+            <p> </p>
+            </div>
+
+            <h2 onclick="setVisible('moderation')"> moderation </h2>
+            <br>
+            <div id="moderation" style="display: none;"> 
+            <p> </p>
+            </div>
+
+            <br>
+            <h3> click on the various options to see all of the commands.</h3>
+            
             <br>
         </div>
     </div>

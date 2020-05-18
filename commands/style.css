@@ -43,3 +43,13 @@ a:hover {
   font-family: 'VT323', monospace;
   font-size: 1.5em;
 }
+
+h2 {
+  text-decoration: underline;
+}
+
+hr {
+  background: black;
+  height: 1px;
+  border: 0px;
+ }
