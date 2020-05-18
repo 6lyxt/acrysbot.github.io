@@ -18,35 +18,38 @@
         var cat = data[i].category.replace('<', '&lt;').replace('>', '&gt;');
         var args = data[i].arguments.replace('<', '&lt;').replace('>', '&gt;');
         console.log(data[i]);
+		
+		var arguments = "";
+		if(args != "") arguments = `<br><b>Arguments</b>: ${args}`;		
 
         switch(cat){
             case "fun":
-            var text = `Name: ${name}<br>Arguments: ${args}<br>Description: ${desc}<br>Category: ${cat}<br><br><hr><br>`;
+            var text = `<b>Name</b>: ${name}${arguments}<br><b>Description</b>: ${desc}<br><b>Category</b>: ${cat}<br><br><hr><br>`;
             funall = funall + text;
             break;
 
             case "color":
-            var text = `Name: ${name}<br>Arguments: ${args}<br>Description: ${desc}<br>Category: ${cat}<br><br><hr><br>`;
+            var text = `<b>Name</b>: ${name}${arguments}<br><b>Description</b>: ${desc}<br><b>Category</b>: ${cat}<br><br><hr><br>`;
             colorall = colorall + text;
             break;
 
             case "misc":
-            var text = `Name: ${name}<br>Arguments: ${args}<br>Description: ${desc}<br>Category: ${cat}<br><br><hr><br>`;
+            var text = `<b>Name</b>: ${name}${arguments}<br><b>Description</b>: ${desc}<br><b>Category</b>: ${cat}<br><br><hr><br>`;
             miscall = miscall + text;
             break;
 
             case "game":
-            var text = `Name: ${name}<br>Arguments: ${args}<br>Description: ${desc}<br>Category: ${cat}<br><br><hr><br>`;
+            var text = `<b>Name</b>: ${name}${arguments}<br><b>Description</b>: ${desc}<br><b>Category</b>: ${cat}<br><br><hr><br>`;
             gameall = gameall + text;
             break;
 
             case "market":
-            var text = `Name: ${name}<br>Arguments: ${args}<br>Description: ${desc}<br>Category: ${cat}<br><br><hr><br>`;
+            var text = `<b>Name</b>: ${name}${arguments}<br><b>Description</b>: ${desc}<br><b>Category</b>: ${cat}<br><br><hr><br>`;
             marketall = marketall + text;
             break;
 
             case "moderation":
-            var text = `Name: ${name}<br>Arguments: ${args}<br>Description: ${desc}<br>Category: ${cat}<br><br><hr><br>`;
+            var text = `<b>Name</b>: ${name}${arguments}<br><b>Description</b>: ${desc}<br><b>Category</b>: ${cat}<br><br><hr><br>`;
             moderationall = moderationall + text;
             break;
 
