@@ -10,6 +10,7 @@
         var gameall = "";
         var marketall = "";
         var moderationall = "";
+	var imageall = "";
         
 
     for(var i = 0; i < data.length; i++){
@@ -51,6 +52,11 @@
             var text = `<b>Name</b>: ${name}${arguments}<br><b>Description</b>: ${desc}<br><b>Category</b>: ${cat}<br><br><hr><br>`;
             moderationall = moderationall + text;
             break;
+			
+	    case "image":
+            var text = `<b>Name</b>: ${name}${arguments}<br><b>Description</b>: ${desc}<br><b>Category</b>: ${cat}<br><br><hr><br>`;
+            imageall = imageall + text;
+            break;
 
         }
         
@@ -62,6 +68,7 @@
     $("#game p").html(gameall);  
     $("#market p").html(marketall); 
     $("#moderation p").html(moderationall); 
+    $("#image p").html(moderationall); 
 
 });
 
@@ -121,6 +128,12 @@ function setVisible(id){
             <h2 onclick="setVisible('moderation')"> moderation </h2>
             <br>
             <div id="moderation" style="display: none;"> 
+            <p> </p>
+            </div>
+		
+	    <h2 onclick="setVisible('image')"> image </h2>
+            <br>
+            <div id="image" style="display: none;"> 
             <p> </p>
             </div>
 
